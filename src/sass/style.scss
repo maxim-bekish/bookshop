@@ -9,10 +9,12 @@ body {
   width: 100%;
   max-width: 1200px;
 }
-
 .slider {
   overflow: hidden;
+
+  height: 700px;
   .sliderLine {
+    height: 100%;
     display: flex;
     transition: all ease 500ms;
   }
@@ -34,7 +36,6 @@ body {
     background: rgba(158, 152, 220, 1);
   }
 }
-
 .header {
   margin: 40px 0;
   display: flex;
@@ -73,6 +74,111 @@ body {
     column-gap: 40px;
     img {
       cursor: pointer;
+    }
+  }
+}
+.content {
+  margin-top: 150px;
+  display: flex;
+  aside {
+    position: relative;
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 23px;
+      .content__li {
+        cursor: pointer;
+        list-style-type: none;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        color: rgb(92, 106, 121);
+      }
+      .content__li-active {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        color: rgb(28, 42, 57);
+        &::before {
+          content: "";
+          left: -20px;
+          position: absolute;
+          display: block;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: rgb(117, 106, 211);
+        }
+      }
+    }
+  }
+}
+.div-fon {
+  left: -100px;
+  top: -50px;
+  width: 416px;
+  height: 710px;
+  background: rgb(239, 238, 246);
+  position: absolute;
+  z-index: -1;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 96px;
+  column-gap: 76px;
+  .card {
+    display: flex;
+    flex-direction: row;
+    width: 424px;
+    height: 300px;
+    .card__info {
+      padding: 49px 0 49px 36px;
+      .card__info__author {
+        font-family: "Open Sans";
+        font-size: 10px;
+        line-height: 14px;
+        color: rgb(92, 106, 121);
+      }
+      .card__info__name {
+        font-size: 16px;
+        line-height: 20px;
+        color: rgb(28, 42, 57);
+      }
+      .card__info__rating {
+        display: flex;
+        align-items: center;
+        span {
+          font-family: "Open Sans";
+          font-size: 10px;
+          line-height: 14px;
+          color: rgb(92, 106, 121);
+        }
+      }
+      .card__info__description {
+        font-family: "Open Sans";
+        font-size: 10px;
+        line-height: 14px;
+        color: rgb(92, 106, 121);
+      }
+      .card__info__prise {
+        font-size: 13px;
+        line-height: 16px;
+        color: rgb(28, 42, 57);
+      }
+      .card__info__button {
+        font-size: 8px;
+        line-height: 10px;
+        color: rgb(76, 61, 178);
+        padding: 18px 0;
+        width: 100%;
+        border: 1px solid rgb(76, 61, 178);
+      }
     }
   }
 }

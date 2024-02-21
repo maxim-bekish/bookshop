@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <title>bookshop</title>
   </head>
   <body>
@@ -48,23 +52,59 @@
     </header>
     <main class="container">
       <div class="main">
-
-          <div class="slider">
-            <div class="sliderLine">
-              <img src="../src/assets/png/banner1.png" alt="banner" />
-              <img src="../src/assets/png/banner2.png" alt="banner" />
-              <img src="../src/assets/png/banner3.png" alt="banner" />
-            </div>
+        <div class="slider">
+          <div class="sliderLine">
+            <img src="../src/assets/png/banner1.png" alt="banner" />
+            <img src="../src/assets/png/banner2.png" alt="banner" />
+            <img src="../src/assets/png/banner3.png" alt="banner" />
           </div>
-          <ul class="all-dot">
-            <li class="dot dot-active"></li>
-            <li class="dot"></li>
-            <li class="dot"></li>
-          </ul>
-
+        </div>
+        <ul class="all-dot">
+          <li class="dot dot-active"></li>
+          <li class="dot"></li>
+          <li class="dot"></li>
+        </ul>
         <section class="content">
-          <aside></aside>
-          <section class="card"></section>
+          <aside>
+            <ul>
+              <li class="content__li content__li-active">Architecture</li>
+              <li class="content__li">Art & Fashion</li>
+              <li class="content__li">Biography</li>
+              <li class="content__li">Business</li>
+              <li class="content__li">Crafts & Hobbies</li>
+              <li class="content__li">Drama</li>
+              <li class="content__li">Fiction</li>
+              <li class="content__li">Food & Drink</li>
+              <li class="content__li">Health & Wellbeing</li>
+              <li class="content__li">History & Politics</li>
+              <li class="content__li">Humor</li>
+              <li class="content__li">Poetry</li>
+              <li class="content__li">Psychology</li>
+              <li class="content__li">Science</li>
+              <li class="content__li">Technology</li>
+              <li class="content__li">Travel & Maps</li>
+            </ul>
+            <div class="div-fon"></div>
+          </aside>
+          <section class="cards">
+            <div class="card">
+              <div class="card__preview"><img src="#" alt="preview" /></div>
+              <div class="card__info">
+                <h2 class="card__info__author">Kevin Kwan</h2>
+                <h3 class="card__info__name">Crazy rich asians</h3>
+                <div class="card__info__rating">
+                  <div>звезды</div>
+                  <span>252 review</span>
+                </div>
+                <p class="card__info__description">
+                  the outrageously funny debut novel about three super-rich,
+                  pedigreed Chinese families and the gossip...
+                </p>
+                <p class="card__info__prise">$4.99</p>
+                <button class="card__info__button" >buy now</button>
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </main>
