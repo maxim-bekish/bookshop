@@ -146,10 +146,11 @@ $background__color: rgb(149 115 155 / 32%);
     }
     .card__info {
       width: 212px;
-      padding: 19px 0 19px 26px;
+      padding: 19px 0 19px 36px;
       display: flex;
       flex-direction: column;
-      row-gap: 16px;
+      // row-gap: 16px;
+      justify-content: space-between;
       .card__info_title {
         display: flex;
         flex-direction: column;
@@ -179,13 +180,16 @@ $background__color: rgb(149 115 155 / 32%);
         }
       }
       .card__info__description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-family: "Open Sans";
         font-size: 10px;
         line-height: 14px;
-        overflow: hidden;
         max-height: 40px;
         height: 100%;
-        text-overflow: ellipsis;
         color: rgb(92, 106, 121);
       }
       .card__info__prise {
@@ -205,6 +209,14 @@ $background__color: rgb(149 115 155 / 32%);
         width: 100%;
         background: white;
         border: 1px solid rgb(76, 61, 178);
+        border-radius: 5px;
+        transition: all 400ms;
+        &:hover {
+          color: white;
+          background: rgb(76, 61, 178);
+          transition: all 400ms;
+          border-radius: 10px;
+        }
       }
     }
   }

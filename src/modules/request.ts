@@ -1,5 +1,6 @@
 import axios from "axios";
 import { cardHTML } from "./cardHTML";
+        import { addBook } from "./addBook";
 export const request = (category: string, position: number): any => {
   const api = `https://www.googleapis.com/books/v1/volumes?q=subject:${category}&key=AIzaSyC0d0WOhMM9yJKTm9Dy7jWdpAxIT9ajLEk&printType=books&startIndex=${position}&maxResults=6&langRestrict=en`;
   // Make a request for a user with a given ID
@@ -8,7 +9,6 @@ export const request = (category: string, position: number): any => {
     .get(api)
     .then((response) => {
       let data = response.data.items;
-
 
       const cards = document.getElementById("cards") as HTMLElement;
 
@@ -20,7 +20,7 @@ export const request = (category: string, position: number): any => {
         card.className = "card";
         let cardData = {
           preview: el.volumeInfo.imageLinks.thumbnail,
-          author: el.volumeInfo.authors[0],
+          author: el.volumeInfo.authors,
           title: el.volumeInfo.title,
           // rating: {
           //   stars: el.,
@@ -32,12 +32,15 @@ export const request = (category: string, position: number): any => {
             price: el.saleInfo.retailPrice?.amount,
             currency: el.saleInfo.retailPrice?.currencyCode,
           },
-          link: el.accessInfo.webReaderLink,
+          id: el.id,
         };
         let x = cardHTML(cardData);
         card.innerHTML = x;
 
         cards.appendChild(card);
+
+
+        addBook(cardData);
       });
     })
     .catch((error) => {

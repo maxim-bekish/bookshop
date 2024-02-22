@@ -4,7 +4,7 @@ interface data {
   //   reviews: el.,
   // };
   preview: string;
-  author: string;
+  author: [];
   title: string;
   description: string;
   price: {
@@ -12,7 +12,7 @@ interface data {
     price: string;
     currency: string;
   };
-  link: string;
+  id: string;
 }
 
 export const cardHTML = (data: data) => {
@@ -20,9 +20,11 @@ export const cardHTML = (data: data) => {
               <div class="card__preview"><img src="${
                 data.preview
               }" alt="preview" /></div>
-              <div class="card__info">
+              <div id="card__info" class="card__info">
                 <div class="card__info_title">
-                  <h2 class="card__info__author">${data.author}</h2>
+                  <h2 class="card__info__author">${data.author.map(
+                    (el) => el
+                  )}</h2>
                   <h3 class="card__info__name">${data.title}</h3>
                   <div class="card__info__rating">
                     <div>звезды</div>
@@ -30,18 +32,14 @@ export const cardHTML = (data: data) => {
                   </div>
                 </div>
                 <p class="card__info__description">
-                 ${data.description}
+                  ${data.description ? data.description : "No description"}
                 </p>
                 <p class="card__info__prise">${
-                  data.price.saleability
-                    ? data.price.price
-                    : "Книга не продается"
+                  data.price.saleability ? data.price.price : ""
                 } </p>
-
-                  <a target="_blank" class="card__info__button" href="${
-                    data.link
-                  }">buy now</a>
-                
+                  <button id="${
+                    data.id
+                  }"  class="card__info__button" >buy now</button>
               </div>
           `;
 };
