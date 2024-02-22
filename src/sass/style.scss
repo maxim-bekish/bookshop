@@ -67,11 +67,28 @@ $background__color: rgb(149 115 155 / 32%);
     }
   }
   .header__section-icon {
+    position: relative;
     display: flex;
     align-items: center;
     column-gap: 40px;
     img {
       cursor: pointer;
+    }
+    .shop {
+      right: -4px;
+      bottom: -5px;
+      display: flex;
+      line-height: 12px;
+      position: absolute;
+      font-size: 10px;
+      font-weight: 500;
+      height: 13px;
+      width: 13px;
+      background-color: red;
+      border-radius: 50%;
+      color: white;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

@@ -1,3 +1,5 @@
+import { shop } from "./shop";
+
 export const addBook = (data: any) => {
   const cardInfo = document.getElementById("cards") as HTMLElement | null;
 
@@ -12,6 +14,7 @@ export const addBook = (data: any) => {
         cards.push(data);
         localStorage.setItem("fav", JSON.stringify(cards));
       }
+      shop()
     }
   });
 };
