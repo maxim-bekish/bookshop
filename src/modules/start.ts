@@ -1,3 +1,4 @@
+
 import { request } from "./request";
 
 export const start = (count: number): void => {
@@ -17,10 +18,11 @@ export const start = (count: number): void => {
       });
       li.classList.add("content__li-active");
       const cards = document.getElementById("cards");
-      cards.innerHTML = " ";
+      cards.innerHTML = "";
       let attribute = li.getAttribute("data-name");
 
       request(attribute, count);
+
     });
   });
 };

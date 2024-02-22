@@ -7,131 +7,183 @@ $background__color: rgb(149 115 155 / 32%);
   width: 100%;
   max-width: 1200px;
 }
-.slider {
-  overflow: hidden;
-
-  height: 700px;
-  .sliderLine {
-    height: 100%;
+.layer {
+  width: 100%;
+  background-color: white;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  position: fixed;
+  .header {
+    padding: 40px 0;
     display: flex;
-    transition: all ease 500ms;
-  }
-}
-.all-dot {
-  display: flex;
-  justify-content: center;
-  margin-top: 17px;
-  display: flex;
-  column-gap: 10px;
-  .dot {
-    cursor: pointer;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(239, 238, 246, 1);
-  }
-  .dot-active {
-    background: rgba(158, 152, 220, 1);
-  }
-}
-.header {
-  margin: 40px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .header__logo {
-    h1 {
-      font-weight: 700;
-      line-height: 29.26px;
-      font-size: 24px;
-      color: rgba(28, 42, 57, 1);
-    }
-  }
-  .header__navigate {
-    text-transform: uppercase;
-    display: flex;
-    column-gap: 40px;
-    .header__navigateAll {
-      cursor: pointer;
-      font-size: 10px;
-      font-weight: 400;
-      line-height: 12.19px;
-      color: rgba(92, 106, 121, 1);
-      &:hover {
-        scale: 1.05;
-      }
-    }
-    .header__navigate-active {
-      font-weight: 700;
-      color: rgba(28, 42, 57, 1);
-    }
-  }
-  .header__section-icon {
-    position: relative;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 40px;
-    img {
-      cursor: pointer;
+
+    .header__logo {
+      h1 {
+        font-weight: 700;
+        line-height: 29.26px;
+        font-size: 24px;
+        color: rgba(28, 42, 57, 1);
+      }
     }
-    .shop {
-      right: -4px;
-      bottom: -5px;
+    .header__navigate {
+      text-transform: uppercase;
       display: flex;
-      line-height: 12px;
-      position: absolute;
-      font-size: 10px;
-      font-weight: 500;
-      height: 13px;
-      width: 13px;
-      background-color: red;
-      border-radius: 50%;
-      color: white;
-      justify-content: center;
+      column-gap: 40px;
+      .header__navigateAll {
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12.19px;
+        color: rgba(92, 106, 121, 1);
+        &:hover {
+          scale: 1.05;
+        }
+      }
+      .header__navigate-active {
+        font-weight: 700;
+        color: rgba(28, 42, 57, 1);
+      }
+    }
+    .header__section-icon {
+      position: relative;
+      display: flex;
       align-items: center;
+      column-gap: 40px;
+      img {
+        cursor: pointer;
+      }
+      .shop {
+        cursor: pointer;
+        right: -4px;
+        bottom: -5px;
+        display: flex;
+        line-height: 12px;
+        position: absolute;
+        font-size: 10px;
+        font-weight: 500;
+        height: 13px;
+        width: 13px;
+        background-color: red;
+        border-radius: 50%;
+        color: white;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 }
-.content {
-  margin-top: 150px;
-  display: flex;
-  aside {
-    position: relative;
-    ul {
-      padding: 0;
+.main {
+  position: relative;
+  margin-top: 109px;
+  .slider {
+    overflow: hidden;
+
+    height: 700px;
+    .sliderLine {
+      height: 100%;
       display: flex;
+      transition: all ease 500ms;
+    }
+
+    .cardBannerOne,
+    .cardBannerTwo {
+      text-decoration: none;
+      color: rgb(28, 42, 57);
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
       flex-direction: column;
-      row-gap: 23px;
-      .content__li {
-        cursor: pointer;
-        list-style-type: none;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 15px;
-        color: rgb(92, 106, 121);
+      z-index: 1;
+      position: absolute;
+      box-shadow: 0px 28px 51px 0px rgb(0, 0, 0, 0.2);
+      text-transform: uppercase;
+      img {
+        width: 55px;
+        height: 12px;
       }
-      .content__li-active {
-        position: relative;
+    }
+    .cardBannerOne {
+      padding: 20px;
+      top: 79px;
+      right: -90px;
+      width: 149px;
+      height: 204px;
+      background: rgb(158, 152, 220);
+    }
+    .cardBannerTwo {
+      padding: 20px 100px 20px 20px;
+      top: 359px;
+      right: -220px;
+      width: 194px;
+      height: 273px;
+      background: rgb(255, 143, 230);
+    }
+  }
+  .all-dot {
+    display: flex;
+    justify-content: center;
+    margin-top: 17px;
+    display: flex;
+    column-gap: 10px;
+    .dot {
+      cursor: pointer;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(239, 238, 246, 1);
+    }
+    .dot-active {
+      background: rgba(158, 152, 220, 1);
+    }
+  }
+  .content {
+    margin-top: 150px;
+    display: flex;
+    aside {
+      position: relative;
+      ul {
+        padding: 0;
         display: flex;
-        align-items: center;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
-        color: rgb(28, 42, 57);
-        &::before {
-          content: "";
-          left: -20px;
-          position: absolute;
-          display: block;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: rgb(117, 106, 211);
+        flex-direction: column;
+        row-gap: 23px;
+        .content__li {
+          cursor: pointer;
+          list-style-type: none;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 15px;
+          color: rgb(92, 106, 121);
+        }
+        .content__li-active {
+          position: relative;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+          color: rgb(28, 42, 57);
+          &::before {
+            content: "";
+            left: -20px;
+            position: absolute;
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgb(117, 106, 211);
+          }
         }
       }
     }
   }
 }
+
 .div-fon {
   left: -100px;
   top: -50px;
@@ -234,6 +286,10 @@ $background__color: rgb(149 115 155 / 32%);
           transition: all 400ms;
           border-radius: 10px;
         }
+      }
+      .shopBook {
+        color: rgb(92, 106, 121);
+        border: 1px solid rgb(238, 237, 245);
       }
     }
   }
