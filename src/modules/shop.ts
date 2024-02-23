@@ -4,6 +4,9 @@ export const shop = () => {
   if (shopCount) {
     shopElement.style.display = "flex";
     shopElement.innerText = shopCount.length;
+    if(shopCount.length===0){
+       shopElement.style.display = "none";
+    }
   } else {
        shopElement.style.display = "none";
   }

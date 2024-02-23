@@ -16,50 +16,40 @@
     <title>bookshop</title>
   </head>
   <body>
-    <header class="layer">
-      <div class="container">
-        <div class="header">
-          <div class="header__logo">
-            <h1>Bookshop</h1>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__logo">
+          <h1 class="header__logo-text">Bookshop</h1>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-item--active">books</li>
+            <li class="header__nav-item">audiobooks</li>
+            <li class="header__nav-item">Stationery & gifts</li>
+            <li class="header__nav-item">blog</li>
+          </ul>
+        </nav>
+        <div class="header__icons">
+          <div class="header__icon">
+            <img src="../src/assets/svg/user.svg" alt="user" />
           </div>
-          <nav>
-            <ul class="header__navigate">
-              <li
-                class="header__navigateAll header__navigate-active header__navigate__books"
-              >
-                books
-              </li>
-              <li class="header__navigateAll header__navigate__audiobooks">
-                audiobooks
-              </li>
-              <li class="header__navigateAll header__navigate__Stationery">
-                Stationery & gifts
-              </li>
-              <li class="header__navigateAll header__navigate__blog">blog</li>
-            </ul>
-          </nav>
-          <div class="header__section-icon">
-            <div>
-              <img src="../src/assets/svg/user.svg" alt="user" />
-            </div>
-            <div>
-              <img src="../src/assets/svg/search.svg" alt="search" />
-            </div>
-            <div>
-              <img src="../src/assets/svg/shop.svg" alt="shop" />
-              <div id="shop" class="shop"></div>
-            </div>
+          <div class="header__icon">
+            <img src="../src/assets/svg/search.svg" alt="search" />
+          </div>
+          <div class="header__icon">
+            <img src="../src/assets/svg/shop.svg" alt="shop" />
+            <div id="shop" class="shop"></div>
           </div>
         </div>
       </div>
     </header>
-    <main class="container">
-      <div class="main">
-        <div class="slider">
-          <div class="sliderLine">
-            <img src="../src/assets/png/banner1.png" alt="banner" />
-            <img  src="../src/assets/png/banner2.png" alt="banner" />
-            <img src="../src/assets/png/banner3.png" alt="banner" />
+    <main class="main">
+      <div class="main__container container">
+        <div class="main__slider">
+          <div class="main__slider-line">
+            <img src="../src/assets/png/banner1.png" alt="Banner" />
+            <img src="../src/assets/png/banner2.png" alt="Banner" />
+            <img src="../src/assets/png/banner3.png" alt="Banner" />
           </div>
           <a href="#" class="cardBannerOne">
             Change old book on new
@@ -70,52 +60,59 @@
             <img src="./../src/assets/svg/arrow.svg" alt="arrow" />
           </a>
         </div>
-        <ul class="all-dot">
-          <li class="dot dot-active"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
+        <ul class="main__dots">
+          <li class="main__dot main__dot--active"></li>
+          <li class="main__dot"></li>
+          <li class="main__dot"></li>
         </ul>
         <section class="content">
-          <aside>
-            <ul>
+          <aside class="content__aside">
+            <ul class="content__list">
               <li
                 data-name="Architecture"
-                class="content__li content__li-active"
+                class="content__item content__item--active"
               >
                 Architecture
               </li>
-              <li data-name="Art" class="content__li">Art & Fashion</li>
-              <li data-name="Biography&Autobiography" class="content__li">
+              <li data-name="Art" class="content__item">Art & Fashion</li>
+              <li data-name="Biography&Autobiography" class="content__item">
                 Biography
               </li>
-              <li data-name="Business" class="content__li">Business</li>
-              <li data-name="Crafts&Hobbies" class="content__li">
+              <li data-name="Business" class="content__item">Business</li>
+              <li data-name="Crafts&Hobbies" class="content__item">
                 Crafts & Hobbies
               </li>
-              <li data-name="Drama" class="content__li">Drama</li>
-              <li data-name="Fiction" class="content__li">Fiction</li>
-              <li data-name="Cooking" class="content__li">Food & Drink</li>
-              <li data-name="Health&Fitness" class="content__li">
+              <li data-name="Drama" class="content__item">Drama</li>
+              <li data-name="Fiction" class="content__item">Fiction</li>
+              <li data-name="Cooking" class="content__item">Food & Drink</li>
+              <li data-name="Health&Fitness" class="content__item">
                 Health & Wellbeing
               </li>
-              <li data-name="History" class="content__li">
+              <li data-name="History" class="content__item">
                 History & Politics
               </li>
-              <li data-name="Humor" class="content__li">Humor</li>
-              <li data-name="Poetry" class="content__li">Poetry</li>
-              <li data-name="Psychology" class="content__li">Psychology</li>
-              <li data-name="Science" class="content__li">Science</li>
-              <li data-name="Technology" class="content__li">Technology</li>
-              <li data-name="Travel" class="content__li">Travel & Maps</li>
+              <li data-name="Humor" class="content__item">Humor</li>
+              <li data-name="Poetry" class="content__item">Poetry</li>
+              <li data-name="Psychology" class="content__item">Psychology</li>
+              <li data-name="Science" class="content__item">Science</li>
+              <li data-name="Technology" class="content__item">Technology</li>
+              <li data-name="Travel" class="content__item">Travel & Maps</li>
             </ul>
-            <div class="div-fon"></div>
+            <div class="content__overlay"></div>
           </aside>
-          <div>
+          <div id="content__cards" class="content__cards">
             <section id="cards" class="cards"></section>
-            <button id="button">ещё</button>
+            <button
+              id="button"
+              class="cards__info-button content__cards__button"
+            >
+              Load more
+            </button>
           </div>
         </section>
       </div>
     </main>
+    <!-- я не придумал как иначе добавить эту картинку в билд -->
+    <img style="display: none" src="./../src/assets/png/placeholder.png" />
   </body>
 </html>

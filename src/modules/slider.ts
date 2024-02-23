@@ -1,16 +1,16 @@
 let img = document.querySelectorAll(
-  ".sliderLine img"
+  ".main__slider-line img"
 ) as NodeListOf<HTMLElement>;
-let sliderLine = document.querySelector(".sliderLine") as HTMLElement;
+let sliderLine = document.querySelector(".main__slider-line") as HTMLElement;
 let count: number = 0;
 let width: number;
 
 const dots = document.querySelectorAll(
-  ".all-dot .dot"
+  ".main__dots .main__dot"
 ) as NodeListOf<HTMLElement>;
 
 function init() {
-  const slider = document.querySelector(".slider") as HTMLElement;
+  const slider = document.querySelector(".main__slider") as HTMLElement;
   width = slider.offsetWidth;
 
   sliderLine.style.width = width * img.length + "px";
@@ -22,8 +22,8 @@ function init() {
 }
 
 function dot(index: number) {
-  dots.forEach((item: any) => item.classList.remove("dot-active"));
-  dots[index].classList.add("dot-active");
+  dots.forEach((item: any) => item.classList.remove("main__dot--active"));
+  dots[index].classList.add("main__dot--active");
 }
 
 function stepSlider(count: number) {

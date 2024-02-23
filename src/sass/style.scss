@@ -1,88 +1,96 @@
-$border-color: rgb(110 73 111 / 38%);
-$background__color: rgb(149 115 155 / 32%);
-
+$border-color: rgba(110, 73, 111, 0.38);
+$background__color: rgba(149, 115, 155, 0.32);
+$colorWhite: rgb(255, 255, 255);
+$colorText: rgb(28, 42, 57);
+$colorTextTwo: rgb(92, 106, 121);
+$colorRed: rgb(255, 0, 0);
+$colorDot: rgb(158, 152, 220);
+$colorActiveButton: rgb(76, 61, 178);
+$colorAll: rgb(239, 238, 246);
 .container {
   margin: 0 auto;
   padding: 0 40px;
   width: 100%;
   max-width: 1200px;
 }
-.layer {
+
+.header {
   width: 100%;
-  background-color: white;
+  background-color: $colorWhite;
   top: 0;
   left: 0;
   z-index: 2;
   position: fixed;
-  .header {
-    padding: 40px 0;
+  .header__container {
+    padding: 25px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
 
-    .header__logo {
-      h1 {
-        font-weight: 700;
-        line-height: 29.26px;
-        font-size: 24px;
-        color: rgba(28, 42, 57, 1);
+  .header__logo {
+    h1 {
+      font-weight: 700;
+      line-height: 29.26px;
+      font-size: 24px;
+      color: $colorText;
+    }
+  }
+  .header__nav-list {
+    text-transform: uppercase;
+    display: flex;
+    column-gap: 40px;
+    .header__nav-item {
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 12.19px;
+      color: $colorTextTwo;
+      &:hover {
+        scale: 1.05;
       }
     }
-    .header__navigate {
-      text-transform: uppercase;
-      display: flex;
-      column-gap: 40px;
-      .header__navigateAll {
-        cursor: pointer;
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 12.19px;
-        color: rgba(92, 106, 121, 1);
-        &:hover {
-          scale: 1.05;
-        }
-      }
-      .header__navigate-active {
-        font-weight: 700;
-        color: rgba(28, 42, 57, 1);
-      }
+    .header__nav-item--active {
+      font-weight: 700;
+      color: $colorText;
     }
-    .header__section-icon {
-      position: relative;
+  }
+  .header__icons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    img {
+      cursor: pointer;
+    }
+    .shop {
+      cursor: pointer;
+      right: -4px;
+      bottom: -5px;
       display: flex;
+      line-height: 12px;
+      position: absolute;
+      font-size: 10px;
+      font-weight: 500;
+      height: 13px;
+      width: 13px;
+      background-color: $colorRed;
+      border-radius: 50%;
+      color: $colorWhite;
+      justify-content: center;
       align-items: center;
-      column-gap: 40px;
-      img {
-        cursor: pointer;
-      }
-      .shop {
-        cursor: pointer;
-        right: -4px;
-        bottom: -5px;
-        display: flex;
-        line-height: 12px;
-        position: absolute;
-        font-size: 10px;
-        font-weight: 500;
-        height: 13px;
-        width: 13px;
-        background-color: red;
-        border-radius: 50%;
-        color: white;
-        justify-content: center;
-        align-items: center;
-      }
     }
   }
 }
-.main {
+
+.main__container {
   position: relative;
   margin-top: 109px;
-  .slider {
+  .main__slider {
     overflow: hidden;
 
     height: 700px;
-    .sliderLine {
+    .main__slider-line {
       height: 100%;
       display: flex;
       transition: all ease 500ms;
@@ -91,7 +99,7 @@ $background__color: rgb(149 115 155 / 32%);
     .cardBannerOne,
     .cardBannerTwo {
       text-decoration: none;
-      color: rgb(28, 42, 57);
+      color: $colorText;
       font-size: 18px;
       line-height: 22px;
       font-weight: 700;
@@ -111,63 +119,65 @@ $background__color: rgb(149 115 155 / 32%);
     .cardBannerOne {
       padding: 20px;
       top: 79px;
-      right: -90px;
+      right: -50px;
       width: 149px;
       height: 204px;
-      background: rgb(158, 152, 220);
+      background: $colorDot;
     }
     .cardBannerTwo {
       padding: 20px 100px 20px 20px;
       top: 359px;
-      right: -220px;
+      right: -180px;
       width: 194px;
       height: 273px;
       background: rgb(255, 143, 230);
     }
   }
-  .all-dot {
+  .main__dots {
     display: flex;
     justify-content: center;
     margin-top: 17px;
     display: flex;
     column-gap: 10px;
-    .dot {
+    .main__dot {
       cursor: pointer;
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: rgba(239, 238, 246, 1);
+      background: $colorAll;
     }
-    .dot-active {
-      background: rgba(158, 152, 220, 1);
+    .main__dot--active {
+      background: $colorDot;
     }
   }
   .content {
     margin-top: 150px;
     display: flex;
-    aside {
+    .content__aside {
+      // width: 100%;
+      width: 195px;
       position: relative;
       ul {
         padding: 0;
         display: flex;
         flex-direction: column;
         row-gap: 23px;
-        .content__li {
+        .content__item {
           cursor: pointer;
           list-style-type: none;
           font-size: 12px;
           font-weight: 500;
           line-height: 15px;
-          color: rgb(92, 106, 121);
+          color: $colorTextTwo;
         }
-        .content__li-active {
+        .content__item--active {
           position: relative;
           display: flex;
           align-items: center;
           font-size: 16px;
           font-weight: 700;
           line-height: 20px;
-          color: rgb(28, 42, 57);
+          color: $colorText;
           &::before {
             content: "";
             left: -20px;
@@ -181,60 +191,103 @@ $background__color: rgb(149 115 155 / 32%);
         }
       }
     }
+    .content__cards {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      .content__cards__button {
+        display: none;
+        justify-content: center;
+        max-width: 176px;
+        margin: 60px 0;
+      }
+      .boxSpinner {
+        z-index: -2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $colorWhite;
+        .loader {
+          width: 100px;
+          height: 100px;
+          border: 5px solid $colorText;
+          border-bottom-color: transparent;
+          border-radius: 50%;
+          display: inline-block;
+          box-sizing: border-box;
+          animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
   }
 }
 
-.div-fon {
+.content__overlay {
   left: -100px;
   top: -50px;
   width: 416px;
   height: 710px;
-  background: rgb(239, 238, 246);
+  background: $colorAll;
   position: absolute;
   z-index: -1;
 }
 .cards {
-  margin-left: 78px;
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 96px;
   column-gap: 76px;
+  justify-content: space-between;
   .card {
     display: flex;
     flex-direction: row;
     width: 424px;
     height: 300px;
-    .card__preview {
+    .cards__preview {
       width: 212px;
       img {
         width: 100%;
         height: 100%;
       }
     }
-    .card__info {
+    .cards__info {
       width: 212px;
       padding: 19px 0 19px 36px;
       display: flex;
       flex-direction: column;
-      // row-gap: 16px;
       justify-content: space-between;
-      .card__info_title {
+      .cards__info-title {
         display: flex;
         flex-direction: column;
         row-gap: 4px;
-        .card__info__author {
+        .cards__info-author {
           font-family: "Open Sans";
           font-size: 10px;
           line-height: 14px;
           font-weight: 400;
-          color: rgb(92, 106, 121);
+          color: $colorTextTwo;
         }
-        .card__info__name {
+        .cards__info-name {
           font-size: 16px;
           line-height: 20px;
-          color: rgb(28, 42, 57);
+          color: $colorText;
         }
         .card__info__rating {
           display: flex;
@@ -244,11 +297,11 @@ $background__color: rgb(149 115 155 / 32%);
             font-family: "Open Sans";
             font-size: 10px;
             line-height: 14px;
-            color: rgb(92, 106, 121);
+            color: $colorTextTwo;
           }
         }
       }
-      .card__info__description {
+      .cards__info-description {
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
@@ -259,38 +312,37 @@ $background__color: rgb(149 115 155 / 32%);
         line-height: 14px;
         max-height: 40px;
         height: 100%;
-        color: rgb(92, 106, 121);
+        color: $colorTextTwo;
       }
-      .card__info__prise {
+      .cards__info-prise {
         font-size: 13px;
         line-height: 16px;
         font-weight: 700;
-        color: rgb(28, 42, 57);
+        color: $colorText;
       }
-      .card__info__button {
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 8px;
-        line-height: 10px;
-        color: rgb(76, 61, 178);
-        padding: 18px 0;
-        width: 100%;
-        background: white;
-        border: 1px solid rgb(76, 61, 178);
-        border-radius: 5px;
-        transition: all 400ms;
-        &:hover {
-          color: white;
-          background: rgb(76, 61, 178);
-          transition: all 400ms;
-          border-radius: 10px;
-        }
-      }
+
       .shopBook {
-        color: rgb(92, 106, 121);
-        border: 1px solid rgb(238, 237, 245);
+        color: $colorTextTwo;
+        border: 1px solid $colorAll;
       }
     }
+  }
+}
+.cards__info-button {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 10px;
+  color: $colorActiveButton;
+  padding: 18px 0;
+  width: 100%;
+  background: $colorWhite;
+  border: 1px solid $colorActiveButton;
+  transition: all 400ms;
+  &:hover {
+    color: $colorWhite;
+    background: $colorActiveButton;
+    transition: all 400ms;
   }
 }

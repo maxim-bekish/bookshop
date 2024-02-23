@@ -1,16 +1,28 @@
+import { addSpinner, removeSpinner } from "./spinner";
 import axios from "axios";
 import { cardHTML } from "./cardHTML";
 import { addBook } from "./addBook";
-export const request = (category: string, position: number): any => {
+
+export const request = (
+  category: string,
+  position: number,
+  flagSpin: boolean
+): void => {
   const api = `https://www.googleapis.com/books/v1/volumes?q=subject:${category}&key=AIzaSyC0d0WOhMM9yJKTm9Dy7jWdpAxIT9ajLEk&printType=books&startIndex=${position}&maxResults=6&langRestrict=en`;
-  // Make a request for a user with a given ID
+
 
   axios
     .get(api)
     .then((response) => {
       let data = response.data.items;
       const cards = document.getElementById("cards") as HTMLElement;
-      if (!Boolean(data)) console.log("Ошибка, нужен VPN");
+      if (!Boolean(data)) {
+        return document
+          .getElementById("content__cards")
+          .append(
+            (document.createElement("span").innerText = `Error НУЖЕН VPN`)
+          );
+      }
       data.forEach((el: any) => {
         const card = document.createElement("div") as HTMLElement;
         card.id = "card";
@@ -28,7 +40,7 @@ export const request = (category: string, position: number): any => {
         }
 
         let cardData = {
-          preview: el.volumeInfo.imageLinks.thumbnail,
+          preview: el.volumeInfo.imageLinks?.thumbnail,
           author: el.volumeInfo.authors,
           title: el.volumeInfo.title,
           description: el.volumeInfo.description,
@@ -48,8 +60,18 @@ export const request = (category: string, position: number): any => {
 
         addBook(cardData);
       });
+      document.getElementById("button").style.display = "flex";
     })
     .catch((error) => {
-      console.log(error);
+      return document
+        .getElementById("content__cards")
+        .append(
+          (document.createElement("span").innerText = `Error ${error.message}`)
+        );
+    })
+    .finally(() => {
+      if (flagSpin) {
+        removeSpinner();
+      }
     });
 };

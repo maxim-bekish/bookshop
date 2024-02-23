@@ -1,5 +1,5 @@
 interface data {
-  preview: string;
+  preview: string | undefined;
   author: [];
   title: string;
   description: string;
@@ -14,26 +14,27 @@ interface data {
 
 export const cardHTML = (data: data) => {
   return `
-              <div class="card__preview"><img src="${
-                data.preview ? data.preview : "./../assets/pnG/placeholder.png"
+              <div class="cards__preview"><img src="${
+                data.preview ? data.preview : "assets/placeholder.png"
               }" alt="preview" /></div>
-              <div id="card__info" class="card__info">
-                <div class="card__info_title">
-                  <h2 class="card__info__author">${data.author.map(
+              <div id="card__info" class="cards__info">
+
+                <div class="cards__info-title">
+                  <h2 class="cards__info-author">${data.author.map(
                     (el) => el
                   )}</h2>
-                  <h3 class="card__info__name">${data.title}</h3>
+                  <h3 class="cards__info-name">${data.title}</h3>
 
                 </div>
-                <p class="card__info__description">
+                <p class="cards__info-description">
                   ${data.description ? data.description : "No description"}
                 </p>
-                <p class="card__info__prise">${
+                <p class="cards__info-prise">${
                   data.price.saleability ? "$" + data.price.price : ""
                 } </p>
-                  <button id="${
-                    data.id
-                  }"  class="card__info__button" >buy now</button>
+                  <button id="${data.id}"  class="cards__info-button ${
+    data.inTheBasket ? "shopBook" : ""
+  }" >${data.inTheBasket ? "in the cart" : "buy now"}</button>
               </div>
           `;
 };
