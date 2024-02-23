@@ -89,7 +89,7 @@ $colorAll: rgb(239, 238, 246);
   .main__slider {
     overflow: hidden;
 
-    height: 700px;
+    max-height: 700px;
     .main__slider-line {
       height: 100%;
       display: flex;
@@ -156,7 +156,7 @@ $colorAll: rgb(239, 238, 246);
     .content__aside {
       width: 195px;
       position: relative;
-      ul {
+      .content__list {
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -343,5 +343,92 @@ $colorAll: rgb(239, 238, 246);
     color: $colorWhite;
     background: $colorActiveButton;
     transition: all 400ms;
+  }
+}
+@function width($n) {
+  @return $n * 2;
+}
+@media (max-width: 500px) {
+  .header {
+    .header__container {
+      flex-direction: column;
+      row-gap: 10px;
+      padding: 15px 10px;
+      .header__nav {
+        .header__nav-list {
+          column-gap: 10px;
+        }
+      }
+    }
+  }
+  .main__container {
+    .main__slider {
+      .cardBannerOne,
+      .cardBannerTwo {
+        display: none;
+      }
+    }
+    .content {
+      flex-direction: column;
+      margin-top: 50px;
+      row-gap: 20px;
+      .content__aside {
+        width: 100%;
+        .content__list {
+          flex-direction: row;
+          flex-wrap: wrap;
+          column-gap: 15px;
+          .content__item--active {
+            font-weight: 700;
+            line-height: 15px;
+            &::before {
+              display: none;
+            }
+          }
+        }
+        .content__overlay {
+          top: -10%;
+          left: -5%;
+          width: 110%;
+          height: 120%;
+        }
+      }
+      .content__cards {
+        .cards {
+          row-gap: 20px;
+          .card {
+            column-gap: 10px;
+            justify-content: space-between;
+            height: inherit;
+            width: 100%;
+            .cards__preview {
+              display: flex;
+              align-items: center;
+              width: 50%;
+              height: inherit;
+              img {
+                height: auto;
+              }
+            }
+            .cards__info {
+              width: 50%;
+              height: inherit;
+              // row-gap: 10px;
+              padding: 0px;
+              justify-content: center;
+              > * {
+                margin-bottom: 5%;
+              }
+              .cards__info-title {
+                .cards__info-name {
+                  font-size: 12px;
+                  line-height: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
