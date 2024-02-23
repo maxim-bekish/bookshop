@@ -3,7 +3,9 @@ import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
 import { buildResolvers } from "./buildResolvers";
+import { buildOptimization } from "./buildOptimization";
 import { BuildOptions } from "./types/types";
+
 
 export function buildWebpack(options: BuildOptions): webpack.Configuration {
   const { mode, paths } = options;
@@ -24,5 +26,6 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
     },
     resolve: buildResolvers(options),
     devServer: isDev ? buildDevServer(options) : undefined,
+    optimization: { minimize: true, minimizer: buildOptimization(options) },
   };
 }

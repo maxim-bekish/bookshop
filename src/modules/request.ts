@@ -63,6 +63,7 @@ export const request = (
       document.getElementById("button").style.display = "flex";
     })
     .catch((error) => {
+
       return document
         .getElementById("content__cards")
         .append(

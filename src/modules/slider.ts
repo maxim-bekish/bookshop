@@ -16,7 +16,6 @@ function init() {
   sliderLine.style.width = width * img.length + "px";
   img.forEach((item: any) => {
     item.style.width = width + "px";
-    // item.style.height = "430px";
   });
   stepSlider(count);
 }

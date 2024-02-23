@@ -3,14 +3,17 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack, { Configuration } from "webpack";
 import { BuildOptions } from "./types/types";
 
-export function buildPlugins({ mode,paths }: BuildOptions): Configuration["plugins"] {
+export function buildPlugins({
+  mode,
+  paths,
+}: BuildOptions): Configuration["plugins"] {
   const isDev = mode === "development";
   const isProd = mode === "production";
 
   const plugins: Configuration["plugins"] = [
     new HtmlWebpackPlugin({
       // путь к HTML
-      template: paths.html
+      template: paths.html,
     }),
   ];
   if (isDev) {
